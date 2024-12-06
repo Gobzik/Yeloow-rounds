@@ -9,14 +9,12 @@ from PyQt6.QtCore import Qt
 class CircleDrawer(QMainWindow):
     def __init__(self):
         super().__init__()
+        uic.loadUi('UI.ui', self)
 
         self.setWindowTitle("Рисование круга")
         self.setGeometry(100, 100, 600, 400)
         self.circles = []
-
-        self.button = QPushButton("Нарисовать круг", self)
-        self.button.setGeometry(10, 10, 150, 40)
-        self.button.clicked.connect(self.draw_random_circle)
+        self.pushButton.clicked.connect(self.draw_random_circle)
 
     def draw_random_circle(self):
         # Генерация случайных размеров и положения круга
